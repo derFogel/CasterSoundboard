@@ -49,6 +49,7 @@
 #include "libs/osc/OscPatternMatching.h"
 #include "libs/osc/reader/types/OscAddress.h"
 #include "libs/osc/reader/types/OscValue.h"
+#include "keyboardwatcher.h"
 
 
 
@@ -126,6 +127,9 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     aboutButton->setIconSize(QSize(40,40));
     aboutButton->setToolTip("About");
 
+    //~~Keyboard Selector~~
+    keyboardSelector = new KeyboardWatcher;
+
     //======Main Toolbar=========
     mainToolbar = new QToolBar;
     // Add buttons
@@ -138,6 +142,7 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
     mainToolbar->addWidget(toggleAudioDuckingButton);
     mainToolbar->addWidget(openSoundControlButton);
     mainToolbar->addWidget(aboutButton);
+    mainToolbar->addWidget(keyboardSelector);
     // Add toolbar to layout
     layout->addWidget(mainToolbar, 0, Qt::AlignLeft);
 
@@ -197,6 +202,7 @@ void MainWindow::mainTabContainerTabClosedRequested(int tabIndex)
 void MainWindow::currentTabWasChanged(int tabIndex)
 {
     this->updateCurrentOSCTab(tabIndex);
+    keyboardSelector->setTarget(mainTabContainer->widget(tabIndex));
 }
 
 void MainWindow::updateCurrentOSCTab(int tabIndex)

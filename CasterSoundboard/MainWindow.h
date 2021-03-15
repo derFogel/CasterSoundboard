@@ -36,6 +36,7 @@ class QUdpSocket;
 class QByteArray;
 class OscMessage;
 class CasterOSCServerConfigPicker;
+class KeyboardWatcher;
 
 class MainWindow : public QWidget //inherit from QWidget
 {
@@ -82,22 +83,22 @@ private:
     //Toolbar
     QToolBar *mainToolbar;
     // Push Buttons
-    QPushButton *addNewTabButton;
-    QPushButton *openTabButton;
-    QPushButton *saveTabButton;
-    QPushButton *saveAsTabButton;
-    QPushButton *renameCurrentTabButton;
-    QPushButton *stopAllSoundsButton;
-    QPushButton *toggleAudioDuckingButton;
-    QPushButton *openSoundControlButton;
-    QPushButton *aboutButton;
+    QPushButton     *addNewTabButton;
+    QPushButton     *openTabButton;
+    QPushButton     *saveTabButton;
+    QPushButton     *saveAsTabButton;
+    QPushButton     *renameCurrentTabButton;
+    QPushButton     *stopAllSoundsButton;
+    QPushButton     *toggleAudioDuckingButton;
+    QPushButton     *openSoundControlButton;
+    QPushButton     *aboutButton;
+    KeyboardWatcher *keyboardSelector;
     //Lower window area
     QTabWidget *mainTabContainer;
     // Bottom
     QStatusBar *main_statusbar;
     // UDP Server
     QUdpSocket *socket;
-
 
 signals:
     //SIGNALS

@@ -36,6 +36,7 @@ SOURCES += main.cpp\
     CSS.cpp \
     CasterPlayerState.cpp \
     CasterCuePicker.cpp \
+    keyboardwatcher.cpp \
     libs/osc/composer/OscBundleComposer.cpp \
     libs/osc/composer/OscContentComposer.cpp \
     libs/osc/composer/OscMessageComposer.cpp \
@@ -77,6 +78,7 @@ HEADERS  += \
     CasterLabelColorPicker.h \
     CasterPlayerState.h \
     CasterCuePicker.h \
+    keyboardwatcher.h \
     libs/osc/composer/OscBundleComposer.h \
     libs/osc/composer/OscContentComposer.h \
     libs/osc/composer/OscMessageComposer.h \
